@@ -7,7 +7,7 @@ Route::get('/', function () {
 });
 
 Route::controller(PageController::class)->group(function () {
-    Route::get('/home', 'home');
-    Route::get('/about', 'about');
-    Route::get('/contact', 'contact');
+    Route::get('/home', 'home')->name('home');
+    Route::get('/about', 'about')->name('about');
+    Route::get('/contact', 'contact')->name('contact');
 });
