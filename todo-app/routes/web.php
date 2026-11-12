@@ -8,6 +8,8 @@ use PHPUnit\Metadata\Group;
 //     return view('welcome');
 // });
 
+Route::redirect('/', '/todos');
+
 Route::controller(TodoController::class)->group(function () {
     Route::get('/todos', 'index')->name('todos.index');
 

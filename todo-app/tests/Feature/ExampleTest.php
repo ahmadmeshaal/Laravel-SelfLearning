@@ -10,10 +10,17 @@ class ExampleTest extends TestCase
     /**
      * A basic test example.
      */
-    public function test_the_application_returns_a_successful_response(): void
+    public function test_the_homepage_redirects_to_the_todo_list(): void
     {
         $response = $this->get('/');
 
-        $response->assertStatus(200);
+        $response->assertRedirect(route('todos.index'));
+    }
+
+    public function test_the_create_page_renders(): void
+    {
+        $response = $this->get('/todos/create');
+
+        $response->assertOk();
     }
 }
