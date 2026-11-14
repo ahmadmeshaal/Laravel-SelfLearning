@@ -17,6 +17,18 @@ class User extends Authenticatable
      *
      * @var list<string>
      */
+
+
+    public function seller()
+    {
+        return $this->hasOne(Seller::class);
+    }
+
+    public function orders()
+    {
+        return $this->hasMany(Order::class);
+    }
+
     protected $fillable = [
         'name',
         'email',
